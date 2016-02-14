@@ -41,7 +41,7 @@ def load_data():
     return Xt,Yt,Xtest,Ytest
 
 
-def train_classifier(Xt,Yt)
+def train_classifier(Xt,Yt):
     n_comp = 700
     anova_filter = SelectKBest(f_classif, k=n_comp)
 

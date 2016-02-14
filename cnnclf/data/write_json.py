@@ -19,15 +19,17 @@ for root, dirs, files in os.walk("./img"):
         for _,__, files in os.walk(f_path):
             files = np.array(files)
             np.random.shuffle(files)
-            N = len(files)
-            thresh = N/5
-            for i, path in enumerate(files):
+            N = len(files)/10
+            thresh = int(N/5)
+            N = int(N)
+            for i in range(N):
+                path = files[i]
                 if (i < thresh ):
                     if i == thresh -1:
                         test.write('"{}/{}"\n'.format(name,path))
                     else:
                         test.write('"{}/{}",\n'.format(name,path))
-                elif ( i> thresh and i != N-1):
+                elif ( i>= thresh and i != N-1):
                     train.write('"{}/{}",\n'.format(name,path))
                 else:
                     train.write('"{}/{}"\n'.format(name,path))
