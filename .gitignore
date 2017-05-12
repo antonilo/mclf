@@ -9,3 +9,6 @@
 
 # pyc
 *.pyc
+
+# images
+*.jpg
